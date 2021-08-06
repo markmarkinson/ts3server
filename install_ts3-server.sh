@@ -9,9 +9,9 @@
 
 # ==> VARIABLES <==
 # user to run the ts3server and where to install it
-TS3_USER="teamspeak3"
-TS3_DIR="/opt/ts3server"
-TS3_VER="3.10.0"
+TS3_USER="xll_teamspeak3"
+TS3_DIR="/opt/xll_ts3server"
+TS3_VER="3.13.6"
 
 # ==> MAIN PROGRAM <==
 set -e # exit with a non-zero status when there is an uncaught error
@@ -47,7 +47,7 @@ rm -rf teamspeak3-server_linux*.tar.bz2 teamspeak3-server_linux*/
 }
 
 # add the user to run ts3server
-if adduser --system --group --disabled-login --disabled-password --no-create-home "$TS3_USER" >/dev/null 2>&1; then
+if adduser --disabled-login  "$TS3_USER" >/dev/null 2>&1; then
   echo -e "\nAdded new user: '$TS3_USER'"
 else
   echo -e "\n ERROR!!! Failed to add new user: '$TS3_USER'\n"
